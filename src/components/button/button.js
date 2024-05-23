@@ -3,7 +3,7 @@
 
 import React from "react"
 
-const Button =() =>{
+const Button = ()=>{
     return(
         <button>log in</button>
     )
