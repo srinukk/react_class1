@@ -1,4 +1,5 @@
-import ButtonComponent from "./components/button/button"
+// import ButtonComponent from "./components/button/button"
+import GreetingComponent from "./components/greetings/greeting"
 // import Buttoncomponent from "./components/button/button"
 
 
@@ -8,8 +9,15 @@ const Hello = ()=>{
 
 return(
   <>
-  <ButtonComponent text={"login"} color={"yellow"}/><br></br>
-<ButtonComponent text={"logOut"} color={"white"} />
+ 
+ <GreetingComponent>
+<h1>srinu</h1>
+<h2>how are u?</h2>
+ </GreetingComponent>
+ <GreetingComponent>
+ <h1>uday</h1>
+<h2>how are u?</h2>
+ </GreetingComponent>
   </>
 )
 
