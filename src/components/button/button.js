@@ -3,9 +3,11 @@
 
 import React from "react"
 
-const Button = ()=>{
+const ButtonComponent = (prop)=>{
+    console.log(prop)
+    const{text="srinu",color}=prop
     return(
-        <button>log in</button>
+        <button style={{color:color ,backgroundColor:"green"}}>{text}</button>
     )
 }
-export default Button
+export default ButtonComponent
