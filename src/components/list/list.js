@@ -1,13 +1,22 @@
 
 
 
-const List =() =>{
+const List =(prop) =>{
+    console.log(prop)
+    const {list} = prop
+
     return(
         <ol>
-        <li>
-         srinu
-        </li>
-        <li>vas</li>
+      {
+        list.map((each) => {
+            return(
+                <>
+                <li>{each}</li>
+                </>
+            )
+        })
+      }
+      
 
         </ol>
     )

@@ -2,10 +2,12 @@
 
 
 
-const Heading1 = ()=>{
+const Heading1 = (prop)=>{
+    console.log(prop)
+    const {title}=prop
     return(
         <div>
-            <h1>my name is Srinivas</h1>
+        <h4>{title}</h4>
         </div>
     )
 }
