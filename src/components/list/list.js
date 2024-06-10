@@ -6,6 +6,7 @@ const List =(prop) =>{
     const {list} = prop
 
     return(
+    
         <ol>
       {
         list.map((each) => {
@@ -19,6 +20,7 @@ const List =(prop) =>{
       
 
         </ol>
+        
     )
 }
 export default List

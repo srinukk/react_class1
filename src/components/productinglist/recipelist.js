@@ -2,6 +2,7 @@ import { Component } from "react";
 import Imagecomponent from "../imagecomponent/imagecom";
 import Heading1 from "../headings/heading";
 import List from "../list/list";
+import axios from "axios";
 
 
 
@@ -12,11 +13,29 @@ class Recipecomponent extends Component{
         items:[],
         issuccess:false
     }
-    recipelist = () =>{
-        fetch('https://dummyjson.com/recipes')
-.then(res => res.json())
-.then((response) => {
-    const {recipes} =response
+//     recipelist = () =>{
+//         fetch('https://dummyjson.com/recipes')
+// .then(res => res.json())
+// .then((response) => {
+//     const {recipes} =response
+//     this.setState(
+//         {
+//             items:recipes,
+//             issuccess:true
+//         },
+//         ()=>{
+//             console.log(this.state.items)
+//         }
+    
+//     )
+    
+    
+
+// });
+    recipelist = async() =>{
+        const response= await axios.get('https://dummyjson.com/recipes')
+
+            const {recipes} =response.data
     this.setState(
         {
             items:recipes,
@@ -27,11 +46,8 @@ class Recipecomponent extends Component{
         }
     
     )
+}
     
-    
-
-});
-    }
     render(){
         return(
         <>
@@ -42,7 +58,8 @@ class Recipecomponent extends Component{
             this.state.items.map((eachrecipe) => {
                 return(
                     <>
-                    <h4>{eachrecipe.id}</h4>
+                
+                    <h4><u>{eachrecipe.id}</u></h4>
                     <h4>{eachrecipe.name}</h4>
                     <Imagecomponent src={eachrecipe.image}/>
                     <Heading1 title={"ingredients"}/>
