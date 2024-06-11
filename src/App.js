@@ -2,7 +2,8 @@
 // import GreetingComponent from "./components/greetings/greeting"
 // import Buttoncomponent from "./components/button/button"
 
-import Recipecomponent from "./components/productinglist/recipelist"
+// import Recipecomponent from "./components/productinglist/recipelist"
+import Profilecomponent from "./components/profile/profile"
 
 
 
@@ -15,7 +16,7 @@ const Hello = ()=>{
 return(
   <>
  
-<Recipecomponent/>
+<Profilecomponent/>
 
 
   </>
