@@ -3,7 +3,8 @@
 // import Buttoncomponent from "./components/button/button"
 
 // import Recipecomponent from "./components/productinglist/recipelist"
-import Uncontrolledform from "./components/form/uncontrolled"
+import Controlledform from "./components/form/controlled"
+// import Uncontrolledform from "./components/form/uncontrolled"
 // import Profilecomponent from "./components/profile/profile"
 
 
@@ -17,7 +18,7 @@ const Hello = ()=>{
 return(
   <>
  
-<Uncontrolledform/>
+<Controlledform/>
 
 
   </>
