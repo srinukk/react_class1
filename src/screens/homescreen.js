@@ -8,6 +8,7 @@ const HomeScreen = () =>{
         <>
         <Barcomponent/>
         <Itemslist/>
+        <h1>welcome to home</h1>
         </>
     )
 }

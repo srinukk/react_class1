@@ -41,6 +41,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Imagecomponent from "../imagecomponent/imagecom";
 import "./Itemlist.css";  // Importing the CSS file
+// import ButtonComponent from "../button/button";
+import { Link } from "react-router-dom";
 
 const Itemslist = () => {
     const [products, setProducts] = useState([]);
@@ -51,7 +53,8 @@ const Itemslist = () => {
 
     const recipelist = async () => {
         try {
-            const { data } = await axios.get('https://fakestoreapi.com/products');
+            const { data } = await axios.get ("https://fakestoreapi.com/products"
+            );
             console.log(data);
             setProducts(data);
         } catch (error) {
@@ -73,6 +76,9 @@ const Itemslist = () => {
                             <p className="product-price">${price}</p>
                             <p className="product-description">{description}</p>
                             <p className="product-rating">Rating: {rating.rate} ({rating.count} reviews)</p>
+                            {/* <ButtonComponent text="view for more" OnSmash={<Link to={`${category}/${id}`}>view for more</Link>}/> */}
+                            <button 
+                             ><Link to={`${category}/${id}`} >view for more</Link></button>
                         </div>
                     );
                 })}
