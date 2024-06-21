@@ -5,11 +5,24 @@ import ContactScreen from "../screens/contactscreen";
 import SettingScreen from "../screens/settingscreen";
 import Invalidscreen from "../screens/invalidscreen";
 import Productdetailscomponent from "../components/items/productdetails";
+import { createContext, useState } from "react";
 
-
+  export   const userinfo = createContext(); 
 
 function Navigationstack (){
-    return <BrowserRouter>
+    const [username,setusername] = useState("srinu")
+    const [count,setcount] = useState(0);
+    const incresecount = () =>{
+        setcount(count+1)
+    }
+    return(
+    <userinfo.Provider 
+    value={{name:username,
+    salary:2000,
+    count:count,
+    incresecount:incresecount}}>
+        
+     <BrowserRouter>
     <Routes>
         <Route path="/" Component={HomeScreen}/>
         <Route path="/about" Component={AboutScreen}/>
@@ -21,5 +34,7 @@ function Navigationstack (){
     </Routes>
     
     </BrowserRouter>
+    </userinfo.Provider>
+    )
 }
 export default Navigationstack

@@ -1,9 +1,14 @@
+import { useContext } from "react"
 import { Link } from "react-router-dom"
+import { userinfo } from "../../navigation/navigation-stack"
 
 
 
 
 const Barcomponent = () =>{
+const globalinfo=useContext(userinfo)
+console.log(globalinfo)
+
     const linkstyle = {
         textDecoration:"none",
         padding:20,
@@ -38,6 +43,12 @@ const Barcomponent = () =>{
       <Link style={linkstyle} to={"/settings"}>Settings</Link>
 
       </li>
+      <li className="nav-item">
+       
+       {/* <Link style={linkstyle} to={"/settings"}>Settings</Link> */}
+      {globalinfo.name}{globalinfo.count}
+ 
+       </li>
     </ul>
   </div>
 </nav>
