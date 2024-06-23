@@ -5,7 +5,8 @@ import ContactScreen from "../screens/contactscreen";
 import SettingScreen from "../screens/settingscreen";
 import Invalidscreen from "../screens/invalidscreen";
 import Productdetailscomponent from "../components/items/productdetails";
-import { createContext, useState } from "react";
+import { createContext, useReducer, useState } from "react";
+import { reducer } from "./jsfunctions";
 
   export   const userinfo = createContext(); 
 
@@ -15,12 +16,19 @@ function Navigationstack (){
     const incresecount = () =>{
         setcount(count+1)
     }
+    const intialstate={
+        count:0
+    }
+   const [currentstate,dispatchfun] = useReducer(reducer,intialstate)
     return(
     <userinfo.Provider 
     value={{name:username,
     salary:2000,
     count:count,
-    incresecount:incresecount}}>
+    incresecount:incresecount,
+    currentstate:currentstate,
+    dispatchfun:dispatchfun
+    }}>
         
      <BrowserRouter>
     <Routes>

@@ -46,7 +46,7 @@ console.log(globalinfo)
       <li className="nav-item">
        
        {/* <Link style={linkstyle} to={"/settings"}>Settings</Link> */}
-      {globalinfo.name}{globalinfo.count}
+      {globalinfo.name}{globalinfo.currentstate.count}
  
        </li>
     </ul>
